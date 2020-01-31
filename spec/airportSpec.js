@@ -19,11 +19,13 @@ describe('airport', function() {
     });
 
     it('a plane can land', function() {
+      spyOn(airport, 'isStormy').and.returnValue(false);
       airport.land(plane)
       expect(airport.runway).toEqual([plane]);
     });
 
     it('throws error if airport has reached capacity', function() {
+      spyOn(airport, 'isStormy').and.returnValue(false);
       airport.capacity = 1;
       airport.land(plane);
       expect( function() { airport.land(plane); } ).toThrow(new Error('Airport Full'));
@@ -36,11 +38,13 @@ describe('airport', function() {
     });
 
     it('throws error if no planes to takeoff', function() {
+      spyOn(airport, 'isStormy').and.returnValue(false);
       expect(airport.runway).toEqual([])
       expect( function() { airport.takeoff(); } ).toThrow(new Error('Airport Empty'));
     });
 
     it('a plane can takeoff', function() {
+      spyOn(airport, 'isStormy').and.returnValue(false);
       airport.land(plane);
       airport.takeoff();
       expect(airport.runway).not.toContain(plane);
@@ -71,11 +75,12 @@ describe('airport', function() {
       airport.land(plane);
       spyOn(airport, 'isStormy').and.returnValue(true);
       expect( function() { airport.takeoff(); } ).toThrow(new Error('Cannot Takeoff In This Weather'));
+      expect(airport.runway).toContain(plane);
     });
 
     it('allows takeoff when weather is not stormy', function() {
-      airport.land(plane);
       spyOn(airport, 'isStormy').and.returnValue(false);
+      airport.land(plane);
       airport.takeoff();
       expect(airport.runway).not.toContain(plane);
     });
