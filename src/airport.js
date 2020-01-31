@@ -2,10 +2,13 @@ class Airport {
   constructor() {
     this.runway = [];
     this.capacity = 20;
+    this.CHANCE_OF_STORM = 0.5;
   }
 
   land(plane) {
-    if (this.runway.length === this.capacity) {
+    if (this.isStormy()) {
+      throw new Error('Cannot Land In This Weather')
+    } else if (this.runway.length === this.capacity) {
       throw new Error('Airport Full');
     }
     this.runway.push(plane);
@@ -21,7 +24,7 @@ class Airport {
   }
 
   isStormy() {
-    return false;
+    return(Math.random() > this.CHANCE_OF_STORM)
   };
 }
 
