@@ -1,7 +1,8 @@
-# Airport Challenge in JavaScript
+Airport Challenge in JavaScript
+===============================
 
-
-### User Stories
+User Stories
+------------
 
 ```
 As an air traffic controller
