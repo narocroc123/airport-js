@@ -18,8 +18,8 @@ class Airport {
     this.runway.pop();
   }
 
-  stormy() {
-  return true;
+  isStormy() {
+    return true;
   };
 }
 

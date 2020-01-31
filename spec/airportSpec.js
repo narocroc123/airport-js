@@ -63,9 +63,13 @@ describe('airport', function() {
   });
 
   describe('weather', function() {
+    it('has an isStormy function', function() {
+      expect(airport.isStormy()).not.toBeUndefined();
+    });
+
     it('stops takeoff when weather is stormy', function() {
       airport.land(plane);
-      expect(airport.stormy()).toEqual(true);
+      expect(airport.isStormy()).toEqual(true);
       expect( function() { airport.takeoff(); } ).toThrow(new Error('Weather is Stormy'));
     });
   });
