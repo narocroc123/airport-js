@@ -12,14 +12,16 @@ class Airport {
   }
 
   takeoff() {
-    if (this.runway.length === 0) {
+    if(this.isStormy()) {
+      throw new Error('Cannot Takeoff In This Weather')
+    } else if (this.runway.length === 0) {
       throw new Error('Airport Empty');
     }
     this.runway.pop();
   }
 
   isStormy() {
-    return true;
+    return false;
   };
 }
 

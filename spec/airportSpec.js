@@ -69,8 +69,8 @@ describe('airport', function() {
 
     it('stops takeoff when weather is stormy', function() {
       airport.land(plane);
-      expect(airport.isStormy()).toEqual(true);
-      expect( function() { airport.takeoff(); } ).toThrow(new Error('Weather is Stormy'));
+      spyOn(airport, 'isStormy').and.returnValue(true);
+      expect( function() { airport.takeoff(); } ).toThrow(new Error('Cannot Takeoff In This Weather'));
     });
   });
 });
