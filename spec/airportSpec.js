@@ -72,5 +72,12 @@ describe('airport', function() {
       spyOn(airport, 'isStormy').and.returnValue(true);
       expect( function() { airport.takeoff(); } ).toThrow(new Error('Cannot Takeoff In This Weather'));
     });
+
+    it('allows takeoff when weather is not stormy', function() {
+      airport.land(plane);
+      spyOn(airport, 'isStormy').and.returnValue(false);
+      airport.takeoff();
+      expect(airport.runway).not.toContain(plane);
+    });
   });
 });
