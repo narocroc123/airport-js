@@ -98,3 +98,49 @@ I want to prevent landing when weather is stormy
     }
 
 - **Using a step debugger** - When you run a debugger, you can hover over variables to see their values.
+
+# Exercises - Learning A New Language By Translation
+
+[Learning a new language by translation - HackMD](https://hackmd.io/kMNgXiPHQf2Q_P9A-tnS9A)
+
+### Exercise in Ruby then JavaScript
+
+- Classes (`class MyClass`)
+    - Initialising a class with a class expression (`const y = class {}`)
+- Methods (`def method`)
+    - Initialising a function with a function expression (`const x = function() {}`)
+    - Arrow functions (`hello = () => "Hello World!";`)
+- Hashes (`{ key ⇒ value }`)
+    - Objects(`var car = {type:"Fiat", model:"500", color:"white"};`)
+- Arrays (`[]`)
+    - In JS (`var cars = ["Saab", "Volvo", "BMW"];`)
+- Variables (`a = 5`)
+    - Let (`let a = 5`) or Const (`const a = 5`)
+- While loop (`while conditional [do]`)
+    - While loop (`while (i < 10) { text += "The number is " + i; i++;}`)
+- For loop (`for variable_name[, variable...] in expression [do]`)
+    - For loop (`for (i = 0; i < 5; i++) {}`)
+- Do..while loop(`loop do # code to be executed break if Boolean_Expression`)
+    - Do while (`do { text += "The number is " + i; i++;}while (i < 10);`)
+- Until loop (`until conditional [do]`)
+    - In JS variation of while/do while loop
+- Initialize (`def initialize()`)
+    - Constructor (`constructor()`)
+- Instance variables and attribute reader/accessor/writer (`@instance = 4`) and (`attr_reader`)
+    - Created in the constructor and accessed using this (`this.variable = variable`)
+- Map (`.map`)
+    - In JS (`.map`)
+- Push (`.push`)
+    - In JS (`.push`)
+- To string (`to_s`)
+    - In JS (`toString()`)
+- To integer (`to_i`)
+    - In JS (`parseInt()`)
+- To array (`to_a`)
+    - In JS (`var cars = new Array("Saab", "Volvo", "BMW");`)
+- Print (`print = hello`)
+    - Print messages in browser (`console.log(hello)`)
+- Constant (`CONSTANT`)
+    - Const notation (`const MY_CONSTANT = "some-value";`)
+- Puts (`puts = 'hello'`)
+    - Console log for debugging (`console.log()`)
