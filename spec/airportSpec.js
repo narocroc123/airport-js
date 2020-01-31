@@ -80,4 +80,15 @@ describe('airport', function() {
       expect(airport.runway).not.toContain(plane);
     });
   });
+
+  it('stops landing when weather is stormy', function() {
+    spyOn(airport, 'isStormy').and.returnValue(true);
+    expect( function() { airport.land(plane); } ).toThrow(new Error('Cannot Land In This Weather'));
+  });
+
+  it('allows landing when weather is not stormy', function() {
+    spyOn(airport, 'isStormy').and.returnValue(false);
+    airport.land(plane);
+    expect(airport.runway).toEqual([plane]);
+  });
 });
